@@ -14,7 +14,7 @@ aws ec2 start-instances --instance-ids $instance_id > /dev/null
 aws ec2 wait instance-running --instance-ids $instance_id > /dev/null
 
 # seconds
-sleep 60
+sleep 30
 
 # Retrieve the instance's public IP address
 public_ip=$(aws ec2 describe-instances --instance-ids $instance_id --query "Reservations[0].Instances[0].PublicIpAddress" --output text)
