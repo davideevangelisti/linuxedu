@@ -29,6 +29,7 @@ app.get('/weather', async (req, res) => {
   }
 });
 
-app.listen(port, () => {
+// By default, a Node.js Express application listens only on the localhost (127.0.0.1). To allow external access, you need to make it listen on all IP addresses (0.0.0.0).
+app.listen(port, '0.0.0.0', () => {
   console.log(`App running on http://localhost:${port}/weather?location=London`);
 });
